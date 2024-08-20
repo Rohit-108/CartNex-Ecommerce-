@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import profile from "../assets/profile.jpg"
 import logoimage from "../assets/logoimage.jpg"
 import coverimage from "../assets/coverimage.jpg"
-const SellerRegistration = () => {
+const Registration = () => {
     return (
         <>
             <section className="w-full ">
@@ -294,4 +294,4 @@ const SellerRegistration = () => {
     )
 }
 
-export default SellerRegistration
+export default Registration

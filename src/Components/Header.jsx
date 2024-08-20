@@ -45,24 +45,12 @@ const Header = () => {
             </div>
           <div className="flex items-center w-1/2 justify-evenly text-md">
             <div className="text-black text-center text-[16px] leading-6">
-            <Link to="" className="flex justify-evenly gap-1 items-center cursor-pointer hover:bg-blue-700 text-lg hover:rounded-lg hover:text-white px-2 py-2" onClick={toggleDropdown} >
+            <Link to="/registrationpage" className="flex justify-evenly gap-1 items-center cursor-pointer hover:bg-blue-700 text-lg hover:rounded-lg hover:text-white px-2 py-2" onClick={toggleDropdown} >
             <div><HiOutlineUserCircle /></div> 
             <div>Login</div>
             <div><MdKeyboardArrowDown /></div>
             </Link>
-            {dropdownOpen && (
-            <ul className="dropdown-menu">
-              <li className="dropdown-item">
-                <a href="#">Action 1</a>
-              </li>
-              <li className="dropdown-item">
-                <a href="#">Action 2</a>
-              </li>
-              <li className="dropdown-item">
-                <a href="#">Action 3</a>
-                </li>
-            </ul>
-            )}
+            
             
            
             

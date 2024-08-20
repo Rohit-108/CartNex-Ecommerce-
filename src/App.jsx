@@ -6,7 +6,7 @@ import Error from "./Components/Error";
 import SellerRegistration from "./Components/SellerRegistration";
 import Login from "./Components/Login";
 import RegistrationPage from "./Components/RegistrationPage.jsx"
-
+import SellerDashboard from "./Components/SellerDashboard.jsx";
 const App = () => {
   return (
     <>
@@ -52,6 +52,10 @@ const appRouter = createBrowserRouter([
       {
         path : "/registrationpage",
         element: <RegistrationPage/>,
+      },
+      {
+        path : "/sellerdashboard",
+        element: <SellerDashboard/>,
       },
       
 

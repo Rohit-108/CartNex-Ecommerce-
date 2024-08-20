@@ -41,9 +41,11 @@ const Login = () => {
                         <div>Forgot password</div></Link>  
                     </div>
                     <div className="">
+                    <Link to="/sellerdashboard">
                         <div className="flex justify-center">
                             <button type="button" className="bg-black mb-6 text-md text-white w-full h-12 font-bold flex justify-center  items-center"><span>Log In</span></button>
                         </div>
+                        </Link>
                         <Link to="/" className="w-full border border-gray-400 h-[50px] flex space-x-3 justify-center bg-[#FAFAFA]ites-center" >
                         <div className="flex justify-between items-center"> <img src={googleicon} alt="google"  className="w-[30px] h=[30px]"/>
                         <span className="text-lg text-gray-400 font-semibold">Sign In with Google</span></div>
@@ -52,7 +54,7 @@ const Login = () => {
                     </div>
                     <div className="flex justify-center">
                     <p className="text-gray-400 font-semibold ">Don't have an account ?
-                    <Link to="/registrationpage" className="ml-2 text-black font-semibold" >Sign up free</Link></p></div>
+                    <Link to="/registration" className="ml-2 text-black font-semibold" >Sign up free</Link></p></div>
                     
                 </div>
             </div>

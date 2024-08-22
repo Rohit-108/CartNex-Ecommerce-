@@ -5,6 +5,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { MdOutlineAssignmentReturned } from "react-icons/md";
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 
 
@@ -15,6 +16,7 @@ const Header = () => {
 
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const cartItem = useSelector(store =>store.cart.items)
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -45,7 +47,7 @@ const Header = () => {
             </div>
           <div className="flex items-center w-1/2 justify-evenly text-md">
             <div className="text-black text-center text-[16px] leading-6">
-            <Link to="/registrationpage" className="flex justify-evenly gap-1 items-center cursor-pointer hover:bg-blue-700 text-lg hover:rounded-lg hover:text-white px-2 py-2" onClick={toggleDropdown} >
+            <Link to="/registration" className="flex justify-evenly gap-1 items-center cursor-pointer hover:bg-blue-700 text-lg hover:rounded-lg hover:text-white px-2 py-2" onClick={toggleDropdown} >
             <div><HiOutlineUserCircle /></div> 
             <div>Login</div>
             <div><MdKeyboardArrowDown /></div>
@@ -69,9 +71,16 @@ const Header = () => {
             </Link>
             </div>
             <div>
-            <Link to="" className="flex justify-center items-center gap-1 cursor-pointer">
+            <Link to="/cart" className="flex justify-center  gap-1 cursor-pointer p-2 relative md:px-4 hover:bg-gray-50 rounded-md  items-center">
             <div><PiShoppingCartLight /></div>
-            <div>Cart</div>
+            <div className=' md:block'>Cart:{
+                <p className='absolute -top-1 -right-1 bg-blue-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+                  {cartItem.length}
+                </p>
+              }
+            </div>
+            
+           
             </Link>
             </div>
             

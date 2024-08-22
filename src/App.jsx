@@ -7,6 +7,9 @@ import SellerRegistration from "./Components/SellerRegistration";
 import Login from "./Components/Login";
 import RegistrationPage from "./Components/RegistrationPage.jsx"
 import SellerDashboard from "./Components/SellerDashboard.jsx";
+import Cart from "./Components/CartData.jsx"
+import {Provider} from "react-redux";
+import store from "./utils/store.jsx";
 const App = () => {
   return (
     <>
@@ -20,11 +23,13 @@ const App = () => {
 const AppLayout = () => {
   return (
     <>
+    <Provider store={store}>
       <div className="app">
         <Header />
         <Outlet />
         <Footer />
       </div>
+      </Provider>
     </>
   )
 }
@@ -50,12 +55,16 @@ const appRouter = createBrowserRouter([
         element: <Login/>,
       },
       {
-        path : "/registrationpage",
+        path : "/registration",
         element: <RegistrationPage/>,
       },
       {
         path : "/sellerdashboard",
         element: <SellerDashboard/>,
+      },
+      {
+        path : "/cart",
+        element: <Cart/>,
       },
       
 

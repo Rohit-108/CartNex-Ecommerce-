@@ -6,6 +6,9 @@ import { PiShoppingCartLight } from "react-icons/pi";
 import { MdOutlineAssignmentReturned } from "react-icons/md";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { FaHeadphones } from "react-icons/fa6";
+import { FaRegEnvelope } from "react-icons/fa6";
+import { FaRegUser } from "react-icons/fa6";
 
 
 
@@ -25,13 +28,49 @@ const Header = () => {
 
 
   return (
-    <header className="h-32 bg-white flex items-center sticky top-0 w-[100vw]  box-border px-16 max-[1320px]:px-16 py-3 z-[99999] lg:max-w-[1600px] " >
-        <div className="flex flex-row items-center w-full justify-around">
+    <header className=" bg-white sticky top-0   box-border  max-[1320px]:px-16  z-[99999] lg:max-w-[1600px" >
+    <div className="bg-blue-500 sticky">
+    <div className="h-10 text-white ml-12 max-lg:px-5 max-lg:h-16 max-[573px]:px-0">
+      <div className="flex justify-between h-full max-lg:flex-col max-lg:justify-center max-lg:items-center max-w-screen-2xl mx-auto px-12 max-[573px]:px-0">
+        <ul className="flex items-center h-full gap-x-5 max-[370px]:text-sm max-[370px]:gap-x-2">
+          <li className="flex items-center gap-x-2 font-semibold">
+            <FaHeadphones className="text-white" />
+            <span>+91 9027748842</span>
+          </li>
+          <li className="flex items-center gap-x-2 font-semibold">
+            <FaRegEnvelope className="text-white text-xl" />
+            <span>test@email.com</span>
+          </li>
+        </ul>
+        <ul className="flex items-center gap-x-5 h-full max-[370px]:text-sm max-[370px]:gap-x-2 font-semibold">
+          
+          <li className="flex items-center">
+            <Link to="/login" className="flex items-center gap-x-2 font-semibold">
+              <FaRegUser className="text-white" />
+              <span>Login</span>
+            </Link>
+          </li>
+          <li className="flex items-center">
+            <Link to="/registration" className="flex items-center gap-x-2 font-semibold">
+              <FaRegUser className="text-white" />
+              <span>Register</span>
+            </Link>
+          </li>
+          
+        
+          <span className="ml-10 text-base"></span>
+          
+          
+        </ul>
+      </div>
+    </div>
+    </div>
+    
+        <div className="flex flex-row items-center w-full justify-around h-28">
           <div className="flex items-center ml-24 gap-12 w-1/2">
           <div className="flex justify-center
           items-center">
-          <p className=" w-[160px
-        ]  h-10 m-0 p-0"><Link to="#">CartNex</Link></p>
+          <p className=" w-[160px]"><Link to="#" className="items-center text-3xl ">Cart<span className="text-blue-500">Nex</span></Link></p>
           </div>
             
            
@@ -47,9 +86,9 @@ const Header = () => {
             </div>
           <div className="flex items-center w-1/2 justify-evenly text-md">
             <div className="text-black text-center text-[16px] leading-6">
-            <Link to="/registration" className="flex justify-evenly gap-1 items-center cursor-pointer hover:bg-blue-700 text-lg hover:rounded-lg hover:text-white px-2 py-2" onClick={toggleDropdown} >
+            <Link to="/sellerdashboard" className="flex justify-evenly gap-1 items-center cursor-pointer hover:bg-blue-700 text-lg hover:rounded-lg hover:text-white px-2 py-2" onClick={toggleDropdown} >
             <div><HiOutlineUserCircle /></div> 
-            <div>Login</div>
+            <div>Account</div>
             <div><MdKeyboardArrowDown /></div>
             </Link>
             

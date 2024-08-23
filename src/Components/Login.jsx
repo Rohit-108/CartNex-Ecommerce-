@@ -8,7 +8,7 @@ import googleicon from "../assets/googleicon.png"
 const Login = () => {
   return (
    <>
-    <section className="w-full pt-0 pb-0 bg-blue-50">
+    <section className="w-full pt-0 pb-7 bg-blue-50">
         <div className="container flex justify-center pt-10">
         <div className="lg:flex items-center relative gap-x-5">
         <div className="lg:w-[572px] w-full h-[783px] flex  bg-white justify-center sm:p-10 p-5 border border-[#E0E0E0]">

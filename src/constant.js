@@ -246,3 +246,29 @@ export const productList =
     }
   }
 ]
+
+
+export const navigation = {
+  sale: [
+    { name: "Discounts", href: "#" },
+    { name: "News", href: "#" },
+    { name: "Register Discounts", href: "#" },
+  ],
+  about: [
+    { name: "About CartNex", href: "#" },
+    { name: "Work With Us", href: "#" },
+    { name: "Company Profile", href: "#" },
+  ],
+  buy: [
+    { name: "CartNex Loyalty Card", href: "#" },
+    { name: "Terms Of Use", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Complaints", href: "#" },
+    { name: "Partners", href: "#" },
+  ],
+  help: [
+    { name: "Contact", href: "#" },
+    { name: "How to Buy at cartNex", href: "#" },
+    { name: "FAQ", href: "#" },
+  ],
+};

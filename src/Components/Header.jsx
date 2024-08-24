@@ -2,13 +2,14 @@ import { Link } from "react-router-dom"
 import { GoSearch } from "react-icons/go";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { PiShoppingCartLight } from "react-icons/pi";
+import { FiShoppingCart } from "react-icons/fi";
 import { MdOutlineAssignmentReturned } from "react-icons/md";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { FaHeadphones } from "react-icons/fa6";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa";
 
 
 
@@ -20,6 +21,7 @@ const Header = () => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const cartItem = useSelector(store =>store.cart.items)
+  const wishItem= useSelector(store =>store.wishlist.items)
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -28,7 +30,7 @@ const Header = () => {
 
 
   return (
-    <header className=" bg-white sticky top-0   box-border  max-[1320px]:px-16  z-[99999] lg:max-w-[1600px" >
+    <header className=" bg-white   max-[1320px]:px-16  z-[99999] lg:max-w-[1600px] --sm-max-width:[480px] --md-max-width:[996px]" >
     <div className="bg-blue-500 sticky">
     <div className="h-10 text-white ml-12 max-lg:px-5 max-lg:h-16 max-[573px]:px-0">
       <div className="flex justify-between h-full max-lg:flex-col max-lg:justify-center max-lg:items-center max-w-screen-2xl mx-auto px-12 max-[573px]:px-0">
@@ -109,15 +111,26 @@ const Header = () => {
             <div>Become a Seller</div>
             </Link>
             </div>
-            <div>
+            <div className="flex">
             <Link to="/cart" className="flex justify-center  gap-1 cursor-pointer p-2 relative md:px-4 hover:bg-gray-50 rounded-md  items-center">
-            <div><PiShoppingCartLight /></div>
-            <div className=' md:block'>Cart:{
-                <p className='absolute -top-1 -right-1 bg-blue-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+            <div className="text-2xl"><FiShoppingCart />
+            {
+                <p className='absolute -top-1 -right-1.5 bg-blue-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
                   {cartItem.length}
                 </p>
-              }
-            </div>
+              }</div>
+            
+            
+           
+            </Link>
+            <Link to="/cart" className="flex justify-center  gap-1 cursor-pointer p-2 relative md:px-4 hover:bg-gray-50 rounded-md  items-center">
+            <div className="text-2xl"><FaRegHeart />
+            {
+                <p className='absolute -top-1 -right-1.5 bg-blue-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+                  {wishItem.length}
+                </p>
+              }</div>
+            
             
            
             </Link>

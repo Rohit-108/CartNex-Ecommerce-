@@ -9,6 +9,7 @@ import RegistrationPage from "./Components/RegistrationPage.jsx";
 import SellerDashboard from "./Components/SellerDashboard.jsx";
 import Cart from "./Components/Cart.jsx";
 import CheckOut from "./Components/CheckOut.jsx";
+import ProductDetails from "./Components/ProductDetails.jsx";  // Import ProductDetails component
 import { Provider } from "react-redux";
 import store from "./utils/store.jsx";
 
@@ -65,6 +66,10 @@ const appRouter = createBrowserRouter([
             element: <CheckOut />,
           },
         ],
+      },
+      {
+        path: "/product/:id", // Add route for product details page
+        element: <ProductDetails />,
       },
     ],
   },

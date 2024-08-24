@@ -1,21 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeItem, increaseItemQuantity, decreaseItemQuantity, selectItemsInCart } from "../utils/cartSlice";
+import { removeItemFromWishlist, wishlist} from "../utils/cartSlice";
 
-const CartData = () => {
-  const cartItems = useSelector(selectItemsInCart);
+const WishlistData = () => {
+  const cartItems = useSelector(wishlist);
   const dispatch = useDispatch();
 
   const handleRemoveItem = (id) => {
-    dispatch(removeItem({ id }));
+    dispatch(removeItemFromWishlist({ id }));
   };
 
-  const handleIncreaseQuantity = (id) => {
-    dispatch(increaseItemQuantity({ id }));
-  };
-
-  const handleDecreaseQuantity = (id) => {
-    dispatch(decreaseItemQuantity({ id }));
-  };
 
   if (cartItems.length === 0) {
     return (
@@ -54,22 +47,11 @@ const CartData = () => {
             </p>
             <div className="flex justify-between items-center mt-2">
               <div className="flex items-center">
-                <button
-                  className="bg-blue-500 ${item.quantity === 1 ? 'bg-blue-500/50 cursor-not-allowed' : '' text-white font-bold w-8 h-8 rounded-md"
-                  disabled={item.quantity === 1}
-                  onClick={() => handleDecreaseQuantity(item.id)}
-                >
-                  -
-                </button>
+                
                 <p className="font-bold w-8 h-8 flex justify-center items-center">
                   {item.quantity}
                 </p>
-                <button
-                  className="bg-blue-500 text-white font-bold w-8 h-8 rounded-md"
-                  onClick={() => handleIncreaseQuantity(item.id)}
-                >
-                  +
-                </button>
+               
               </div>
               <button
                 className="border border-blue-500 text-xs font-semibold text-blue-500 p-2 px-4 rounded-md"
@@ -85,5 +67,4 @@ const CartData = () => {
   );
 };
 
-export default CartData;
-
+export default WishlistData;

@@ -7,12 +7,42 @@ import { FaLock } from "react-icons/fa";
 import { RiLogoutCircleRFill } from "react-icons/ri";
 import { MdReviews } from "react-icons/md";
 import { MdPayments } from "react-icons/md";
+import { useState } from "react";
+import PersonalInfo from "./PersonalInfo"
+import DashboardPage from "./DashboardPage";
+import PaymentMethod from "./PaymentMethod.jsx"
+import Review from "./Review.jsx";
 
 
 import { Link } from "react-router-dom"
+import Order from "./Order";
 
 
-const SellerDashboard = () => {
+
+
+  const SellerDashboard = () => {
+    const [activeComponent, setActiveComponent] = useState('DashboardPage'); // Default component
+  
+    const renderComponent = () => {
+      switch (activeComponent) {
+
+        case 'DashboardPage':
+          return <DashboardPage />;
+        case 'PersonalInfo':
+          return <PersonalInfo />;
+        case 'Order':
+          return <Order />;
+        case 'PaymentMethod':
+          return <PaymentMethod />;
+        case 'Review':
+            return <Review />;
+        
+        // default:
+        // return <DashboardPage />;
+      }
+    };
+
+
   return (
     <>
         <div className="w-full pt-2 pb-0 bg-blue-50">
@@ -24,15 +54,15 @@ const SellerDashboard = () => {
                         <span><Link><span className="mx-1 capitalize">Profile</span></Link>
                         <span className="">/</span></span>
                     </div>
-                    <div className="w-full bg-white px-10 py-9">
+                    <div className="w-[1200px] bg-white px-10 py-9">
                         <div className="w-full flex justify-between items-center">
                             <h1 className="text-[22px] font-bold text-black">Your Dashboard</h1>
                         </div>
                         <div className="w-full mt-8 flex space-x-10">
-                            <div className="w-[236px] min-h-[600px] border-[rgba(0, 0, 0, 0.1)]">
+                            <div className="w-[236px] min-h-[600px] border-r border-[rgba(0, 0, 0, 0.1)]">
                             <div className="flex flex-col space-y-10">
                                 <div>
-                                    <Link to="">
+                                    <Link to="#" onClick={() => setActiveComponent('DashboardPage')}>
                                         <div className="flex space-x-3 items-center text-gray-600 hover:text-black cursor-pointer">
                                         <span className="text-lg"><MdDashboard /></span>
                                             <span className="font-normal text-base">Dashboard</span>
@@ -40,7 +70,7 @@ const SellerDashboard = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link to="">
+                                    <Link to="#" onClick={() => setActiveComponent('PersonalInfo')}>
                                         <div className="flex space-x-3 items-center text-gray-600 hover:text-black">
                                             <span className="text-lg"><BsFillPersonFill /></span>
                                             <span className="font-normal text-base">Personal Info</span>
@@ -48,7 +78,7 @@ const SellerDashboard = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link to="">
+                                    <Link to="#"  onClick={() => setActiveComponent('PaymentMethod')}>
                                         <div className="flex space-x-3 items-center text-gray-600 hover:text-black">
                                             <span className="text-lg"><MdPayments /></span>
                                             <span className="font-normal text-base">Payment Method</span>
@@ -56,7 +86,7 @@ const SellerDashboard = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link to="">
+                                    <Link to="#"  onClick={() => setActiveComponent('Order')}>
                                         <div className="flex space-x-3 items-center text-gray-600 hover:text-black">
                                             <span className="text-lg"><MdShoppingCart /></span>
                                             <span className="font-normal text-base">Order</span>
@@ -72,7 +102,7 @@ const SellerDashboard = () => {
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link to="">
+                                    <Link to="#"  onClick={() => setActiveComponent('Review')}>
                                         <div className="flex space-x-3 items-center text-gray-600 hover:text-black">
                                             <span className="text-lg"><MdReviews /></span>
                                             <span className="font-normal text-base">Reviews</span>
@@ -114,7 +144,10 @@ const SellerDashboard = () => {
                             </div>
 
                             </div>
-                            <div className="flex-1"></div>
+                            <div className="flex-1">
+                            {renderComponent()}
+                               
+                            </div>
                         </div>
                     </div>
                     </div>

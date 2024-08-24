@@ -48,7 +48,7 @@ const Login = () => {
                         </Link>
                         <Link to="/" className="w-full border border-gray-400 h-[50px] flex space-x-3 justify-center bg-[#FAFAFA]ites-center" >
                         <div className="flex justify-between items-center"> <img src={googleicon} alt="google"  className="w-[30px] h=[30px]"/>
-                        <span className="text-lg text-gray-400 font-semibold">Sign In with Google</span></div>
+                        <span className="text-lg text-gray-400 font-semibold  d">Sign In with Google</span></div>
                            
                         </Link>
                     </div>

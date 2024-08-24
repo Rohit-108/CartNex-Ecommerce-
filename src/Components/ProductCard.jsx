@@ -5,7 +5,7 @@ import { addItem } from "../utils/cartSlice";
 import ProductCardRating from "./ProductCardRating";
 
 const ProductCard = ({ product }) => {
-  const { mainImage, price, rating, slug, title } = product;
+  const { mainImage, price, rating, slug, title, id } = product;
   const dispatch = useDispatch();
 
   const handleAddItem = () => {

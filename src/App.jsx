@@ -1,17 +1,7 @@
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import Body from "./Components/Body";
-import Error from "./Components/Error";
-import SellerRegistration from "./Components/SellerRegistration";
-import Login from "./Components/Login";
-import RegistrationPage from "./Components/RegistrationPage.jsx";
-import SellerDashboard from "./Components/SellerDashboard.jsx";
-import Cart from "./Components/Cart.jsx";
-import CheckOut from "./Components/CheckOut.jsx";
-import ProductDetails from "./Components/ProductDetails.jsx";  // Import ProductDetails component
+import { Header, Footer, Body, Error, SellerRegistration, Login, RegistrationPage, SellerDashboard, Cart, CheckOut, ProductDetails, WishlistPage } from "./Components/index.jsx";
 import { Provider } from "react-redux";
-import store from "./utils/store.jsx";
+import store from "./store/store.jsx";
 
 const App = () => {
   return (
@@ -70,6 +60,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/product/:id", // Add route for product details page
         element: <ProductDetails />,
+      },
+      {
+        path: "/wishlistpage", // Add route for product details page
+        element: <WishlistPage />,
       },
     ],
   },

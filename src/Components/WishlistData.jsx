@@ -1,26 +1,36 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeItemFromWishlist, wishlist} from "../utils/cartSlice";
+import { removeItem, selectWishlist, increaseItemQuantity, decreaseItemQuantity } from "../store/wishlistSlice";
 
 const WishlistData = () => {
-  const cartItems = useSelector(wishlist);
+  const wishItems = useSelector(selectWishlist);
   const dispatch = useDispatch();
 
   const handleRemoveItem = (id) => {
-    dispatch(removeItemFromWishlist({ id }));
+    dispatch(removeItem({ id }));
   };
 
 
-  if (cartItems.length === 0) {
+  const handleIncreaseQuantity = (id) => {
+    dispatch(increaseItemQuantity({ id }));
+  };
+
+  const handleDecreaseQuantity = (id) => {
+    dispatch(decreaseItemQuantity({ id }));
+  };
+
+
+
+  if (wishItems.length === 0) {
     return (
       <div className="flex grow min-h-[60vh] justify-center items-center">
-        <p>Your cart is empty!</p>
+        <p>Your Wishlist is empty!</p>
       </div>
     );
   }
 
   return (
     <ul className="basis-7/12">
-      {cartItems.map((item) => (
+      {wishItems.map((item) => (
         <li key={item.id} className="flex gap-4 justify-between max-w-[600px] my-4">
           <div className="basis-3/12">
             <img
@@ -47,18 +57,38 @@ const WishlistData = () => {
             </p>
             <div className="flex justify-between items-center mt-2">
               <div className="flex items-center">
-                
+
                 <p className="font-bold w-8 h-8 flex justify-center items-center">
                   {item.quantity}
                 </p>
-               
+                <div className="flex justify-between items-center mt-2">
+                  <div className="flex items-center">
+                    <button
+                      className="bg-blue-500 ${item.quantity === 1 ? 'bg-blue-500/50 cursor-not-allowed' : '' text-white font-bold w-8 h-8 rounded-md"
+                      disabled={item.quantity === 1}
+                      onClick={() => handleDecreaseQuantity(item.id)}
+                    >
+                      -
+                    </button>
+                    <p className="font-bold w-8 h-8 flex justify-center items-center">
+                      {item.quantity}
+                    </p>
+                    <button
+                      className="bg-blue-500 text-white font-bold w-8 h-8 rounded-md"
+                      onClick={() => handleIncreaseQuantity(item.id)}
+                    >
+                      +
+                    </button>
+                  </div>
+                  <button
+                    className="border border-blue-500 text-xs font-semibold text-blue-500 p-2 px-4 rounded-md"
+                    onClick={() => handleRemoveItem(item.id)}
+                  >
+                    Remove
+                  </button>
+                </div>
               </div>
-              <button
-                className="border border-blue-500 text-xs font-semibold text-blue-500 p-2 px-4 rounded-md"
-                onClick={() => handleRemoveItem(item.id)}
-              >
-                Remove
-              </button>
+
             </div>
           </div>
         </li>

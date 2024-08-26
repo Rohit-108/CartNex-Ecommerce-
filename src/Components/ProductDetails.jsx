@@ -1,10 +1,8 @@
-import StockAvailability from "./StockAvailability";
-import ProductCardRating from "./ProductCardRating";
-import SingleProductionDynamic from "./SingleProductionDynamic";
-import AddToWishlistButton from "./AddToWishlistButton";
-import {  FaSquareTwitter, FaSquarePinterest } from "react-icons/fa6";
-
+import { StockAvailability, ProductCardRating, SingleProductionDynamic, AddToWishlistButton } from "./index";
+import { FaSquareTwitter, FaSquarePinterest } from "react-icons/fa6";
 const SingleProductPage = ({ product }) => {
+
+
   return (
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto">
@@ -44,7 +42,7 @@ const SingleProductPage = ({ product }) => {
               <div className="text-lg flex gap-x-2">
                 <span>Share:</span>
                 <div className="flex items-center gap-x-1 text-2xl">
-               
+
                   <FaSquareTwitter />
                   <FaSquarePinterest />
                 </div>

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
-import { addItem } from "../utils/cartSlice"; // Import your cartSlice's addItem action
+import { addItem } from "../store/cartSlice"; // Import your cartSlice's addItem action
 
 const BuyNowBtn = ({ product }) => {
   const navigate = useNavigate(); // Use useNavigate hook for navigation

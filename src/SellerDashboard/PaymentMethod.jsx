@@ -6,10 +6,10 @@ const PaymentMethods = () => {
       <div className="items-wrapper-bank-payment w-full">
         <ul className="items">
           {[
-            { src: "/assets/images/card-1.svg", alt: "payment", id: "b26bpg" },
-            { src: "/assets/images/card-2.svg", alt: "payment", id: "ny3hlk" },
-            { src: "/assets/images/card-3.svg", alt: "payment", id: "0tkqro" },
-            { src: "/assets/images/card-4.svg", alt: "payment", id: "di37o" },
+            { src: "https://shopo.quomodothemes.website/assets/images/card-1.svg", alt: "payment", id: "b26bpg" },
+            { src: "https://shopo.quomodothemes.website/assets/images/card-2.svg", alt: "payment", id: "ny3hlk" },
+            { src: "https://shopo.quomodothemes.website/assets/images/card-3.svg", alt: "payment", id: "0tkqro" },
+            { src: "https://shopo.quomodothemes.website/assets/images/card-4.svg", alt: "payment", id: "di37o" },
           ].map((card, index) => (
             <li
               key={index}
@@ -34,8 +34,8 @@ const PaymentMethods = () => {
               <div>
                 <button
                   type="button"
-                  className="w-[116px] sm:h-[46px] h-[40px] bg-qyellow text-qblack font-medium sm:text-18 text-sm tracking-wide"
-                  // Add an onClick handler if needed
+                  className="w-[116px] sm:h-[46px] h-[40px] bg-blue-500 text-qblack font-medium sm:text-18 text-sm tracking-wide"
+                // Add an onClick handler if needed
                 >
                   <span>Manage</span>
                 </button>
@@ -43,18 +43,18 @@ const PaymentMethods = () => {
             </li>
           ))}
         </ul>
-        <div className="flex space-x-4">
+        <div className="flex space-x-4 mt-5">
           <button
             type="button"
-            className="text-white bg-qblack w-[126px] h-[50px] text-sm font-semibold"
-            // Add an onClick handler if needed
+            className="text-white bg-black w-[126px] h-[50px] text-sm font-semibold"
+          // Add an onClick handler if needed
           >
             Add Card
           </button>
           <button
             type="button"
-            className="text-qblack w-[126px] h-[50px] text-sm font-semibold border border-qblack"
-            // Add an onClick handler if needed
+            className="text-qblack w-[126px] h-[50px] text-sm font-semibold border border-black"
+          // Add an onClick handler if needed
           >
             Add Bank
           </button>

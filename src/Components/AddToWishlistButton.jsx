@@ -1,5 +1,5 @@
 import { FaHeart } from "react-icons/fa6";
-import { addItemToWishlist } from "../utils/wishlistSlice";
+import { addItemToWishlist } from "../store/wishlistSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 

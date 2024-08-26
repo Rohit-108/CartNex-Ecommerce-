@@ -1,7 +1,6 @@
-import CartData from "./CartData";
-import OrderSummary from "./OrderSummary";
+import { CartData, OrderSummary } from "./index";
 import { useSelector } from "react-redux";
-import { selectItemsInCart } from "../utils/cartSlice";
+import { selectItemsInCart } from "../store/cartSlice";
 
 const Cart = () => {
   const cartItems = useSelector(selectItemsInCart);

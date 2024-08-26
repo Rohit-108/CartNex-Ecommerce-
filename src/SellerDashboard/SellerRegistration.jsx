@@ -152,7 +152,7 @@ const Registration = () => {
                       <div className="flex xl:justify-center justify-start">
                         <div className="relative">
                           <img
-                            src="/src/assets/profile.jpg"
+                            src={profile}
                             alt="Profile"
                             className="sm:w-[198px] sm:h-[198px] w-[199px] h-[199px] rounded-full object-cover"
                           />

@@ -1,8 +1,6 @@
 
-import Hero from "./Hero";
-import IntroductionSection from "./IntroductionSection";
-import Categorymenu from "./Categorymenu";
-import ProductSection from "./ProductSection";
+import { Hero, IntroductionSection, Categorymenu, ProductSection } from "../Components/index";
+
 
 const Body = () => {
 
@@ -14,8 +12,8 @@ const Body = () => {
         <IntroductionSection />
         <Categorymenu />
         <ProductSection />
-        
-        
+
+
       </div>
     </>
   );

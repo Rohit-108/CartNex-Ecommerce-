@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
-import { selectItemsInCart, selectTotalPrice } from '../utils/cartSlice';
+import { selectItemsInCart, selectTotalPrice } from '../store/cartSlice';
 import { Link } from 'react-router-dom';
 
 
 const OrderSummary = () => {
   const cartItems = useSelector(selectItemsInCart);
   const totalPrice = useSelector(selectTotalPrice);
-  const discount = totalPrice * 0.1; 
+  const discount = totalPrice * 0.1;
   const deliveryCharges = totalPrice * 0.05;
   const totalAmt = totalPrice - discount + deliveryCharges;
 
@@ -27,7 +27,7 @@ const OrderSummary = () => {
           <p>+ ₹ {parseFloat(deliveryCharges).toFixed(2)}</p>
         </div>
         <p className='text-sm my-2'>
-        You'll save ₹{parseFloat(discount).toFixed(2)} on this order 🎉
+          You'll save ₹{parseFloat(discount).toFixed(2)} on this order 🎉
         </p>
       </div>
 
@@ -42,7 +42,7 @@ const OrderSummary = () => {
       <Link to="checkout"><button className='w-full block mt-4 uppercase font-bold text-lg bg-blue-600 text-white text-center p-4 rounded-md'>
         Place Order
       </button></Link>
-      
+
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { removeItem, increaseItemQuantity, decreaseItemQuantity, selectItemsInCart } from "../utils/cartSlice";
+import { removeItem, increaseItemQuantity, decreaseItemQuantity, selectItemsInCart } from "../store/cartSlice";
 
 const CartData = () => {
   const cartItems = useSelector(selectItemsInCart);

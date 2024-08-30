@@ -13,7 +13,7 @@ export { default as Heading } from "./Heading";
 export { default as Hero } from "./Hero";
 export { default as IntroductionSection } from "./IntroductionSection";
 export { default as Login } from "./Login.jsx"
-export { default as OrderSummary } from "./orderSummary"
+export { default as OrderSummary } from "./OrderSummary"
 export { default as ProductCard } from "./ProductCard"
 export { default as ProductCardRating } from "./ProductCardRating"
 export { default as ProductDetails } from "./ProductDetails"

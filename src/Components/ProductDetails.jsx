@@ -1,7 +1,9 @@
+/* eslint-disable react/prop-types */
 import { StockAvailability, ProductCardRating, SingleProductionDynamic, AddToWishlistButton } from "./index";
 import { FaSquareTwitter, FaSquarePinterest } from "react-icons/fa6";
 const SingleProductPage = ({ product }) => {
 
+  console.log("product Name : ", product);
 
   return (
     <div className="bg-white">
